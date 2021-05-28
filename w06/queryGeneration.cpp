@@ -4,7 +4,7 @@ using namespace std;
 
 string genQuery(string username, string password)
 {
-    string sqlOutput = "SELECT authenticate FROM passwordList WHERE name='" + username + "' and password='" + password + "';";
+    string sqlOutput = "SELECT id FROM userAuth WHERE name='" + username + "' and password='" + password + "';";
     return sqlOutput;
 }
 
