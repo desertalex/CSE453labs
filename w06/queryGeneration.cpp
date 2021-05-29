@@ -19,5 +19,6 @@ int main()
     cin >> password;
     string sqlOutput = genQuery(username, password);
     cout << sqlOutput << endl;
+
     return 0;
 }

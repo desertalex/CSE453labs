@@ -1,0 +1,5 @@
+# ignre all compiles c++ files
+*.exe
+
+# for vs_code
+settings.json
