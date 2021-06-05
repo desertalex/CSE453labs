@@ -95,11 +95,11 @@ void two(long number)              // 345678
         << "-----------------+\n";
    for (long i = 24; i >= -4; i--)   // You may need to change 24 to another number
    {
-      cout << setw(4) << i
-      << setw(16) << &bow + i
-      << setw(20) << hex << *(&bow + i)
-      << setw(20) << dec << *(&bow + i)
-      << setw(18) << displayCharArray((const char*)(&bow + i))
+      cout << setw(4) << i                                      // i is the iteration from 24 to -4
+      << setw(16) << &bow + i                                   // print the address of bow plus i
+      << setw(20) << hex << *(&bow + i)                         // set output type to hex and print the value in bow plus i
+      << setw(20) << dec << *(&bow + i)                         // reset output type to decimal and print the value of bow plus i
+      << setw(18) << displayCharArray((const char*)(&bow + i))  // print any text contained in the memory at bow plus i
       << endl;
    }
 
