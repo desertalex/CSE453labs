@@ -95,11 +95,12 @@ void two(long number)              // 345678
         << "-----------------+\n";
    for (long i = 24; i >= -4; i--)   // You may need to change 24 to another number
    {
-      ////////////////////////////////////////////////
-      // Insert code here to display the callstack
-      
-      //
-      ////////////////////////////////////////////////
+      cout << setw(4) << i
+      << setw(16) << &bow + i
+      << setw(20) << hex << *(&bow + i)
+      << setw(20) << dec << *(&bow + i)
+      << setw(18) << displayCharArray((const char*)(&bow + i))
+      << endl;
    }
 
    ////////////////////////////////////////////////
