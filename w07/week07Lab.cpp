@@ -95,25 +95,48 @@ void two(long number)              // 345678
         << "-----------------+\n";
    for (long i = 64; i >= -4; i--)   // You may need to change 24 to another number
    {
-      cout << setw(4) << i                                      // i is the iteration from 24 to -4
-      << setw(16) << &bow + i                                   // print the address of bow plus i
-      << setw(20) << hex << *(&bow + i)                         // set output type to hex and print the value in bow plus i
-      << setw(20) << dec << *(&bow + i)                         // reset output type to decimal and print the value of bow plus i
-      << setw(18) << displayCharArray((const char*)(&bow + i))  // print any text contained in the memory at bow plus i
-      << endl;
-   }  
+      ////////////////////////////////////////////////
+      // Insert code here to display the callstack
+      cout << "[" << i << "]";
+      cout << setw(15) << &bow + i;
+      cout << setw(20) << hex << *(&bow + i);
+      cout << setw(20) << dec << *(&bow + i);
+      cout << setw(18) << displayCharArray((const char*)(&bow + i)) << endl;
+      //
+      ////////////////////////////////////////////////
+   }
 
    ////////////////////////////////////////////////
    // Insert code here to change the variables in main()
                                                                                 
    // change text in main() to "*main**"
+   pChar = (char *) &bow;
+   while (string(pChar) != "*MAIN**") {
+       pChar++;
+   }
+   pChar[1] = 'm';
+   pChar[2] = 'a';
+   pChar[3] = 'i';
+   pChar[4] = 'n';
 
    // change number in main() to 654321
-
+    pLong = (long *) &bow;
+    while (*pLong != 123456) {
+       pLong++;
+   }
+   *pLong = 654321;
    // change pointerFunction in main() to point to pass
-
+    pLong = (long *) &bow;
+    while (*pLong != (long) fail) {
+        pLong++;
+    }
+    *pLong = (long) pass;
    // change message in main() to point to passMessage
-
+    pLong = (long *) &bow;
+    while (*pLong != (long) failMessage) {
+        pLong++;
+    }
+    *pLong = (long) passMessage;
    //
    ////////////////////////////////////////////////
 }
